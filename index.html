@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="index.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -25,15 +26,21 @@
                 <p class="header-title">Firmanet Şirket Yönetim Kurulu Platformu: Çağrı Listele</p>
             </div>
             <div class="col-sm-2">
-                <a class="navbar-brand">Navbar</a>
+                <a href=""><i class="fa-solid fa-arrow-left"></i></a>
+                <a href="" class="arrow-right-link"><i class="fa-solid fa-arrow-right"></i></a>
+                <a href=""><i class="fa-solid fa-xmark"></i></a>
+                <a class="home-link" href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                </a>
             </div>
             <div class="col-sm-8">
                 <div class="empty-box"></div>
             </div>
             <div class="col-sm-2">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex search-form" role="search">
+                    <input class="form-control me-2 search-input" type="
+                    " placeholder="" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </form>
             </div>
         </div>
@@ -41,29 +48,126 @@
 
     <div class="row header-container">
         <div class="col-sm-6 logo-container">
-            <a class="navbar-brand">Navbar</a>
+            <a class="navbar-brand" href="index.html">Firmanet</a>
         </div>
         <div class="col-sm-6 search-container">
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+            <form class="d-flex header-search-form" role="search">
+                <input class="form-control me-2 header-search-input" type="" placeholder="" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
             </form>
+            <i class="fa-solid fa-user"></i>
         </div>
     </div>
-    <div class="col-sm-12">
-        <div id="tabs" class="tabs-container"></div>
+
+    <div class="d-flex">
+        <div class="col-sm-2"></div>
+        <div id="tabPanel" class="col-sm-10"></div>
     </div>
 
     <div class="row">
-        <div class="col-sm-4">
-            <ul class="list-group">
-                <li class="list-group-item">Çağrılar</li>
-                <li class="list-group-item">Çağrı Listele</li>
-                <li class="list-group-item">Çağrı Ekle</li>
-              </ul>
+        <div class="col-sm-2">
+            <div class="list-group-item-title">
+                <p>Çağrılar</p>
+            </div>
+            <ul class="list-group" id="lists">
+                <li class="tab-switcher list-group-item" data-tab-index="0" tabindex="0">
+                    Çağrı Listele
+                </li>
+                <li class="tab-switcher list-group-item" data-tab-index="1" tabindex="0">
+                    Çağrı Ekle
+                </li>
+            </ul>
         </div>
-        <div class="col-sm-8 data-container"></div>
+        <div id="allTabsContainer" class="col-sm-10 allTabsContainer">
+            <div id="tab1" class="tab-container" data-tab-index="0">
+                <div class="d-flex justify-content-end align-items-center mb-1">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <i class="fa-solid fa-trash-can"></i>
+                    <button class="d-flex create-button">
+                        <i class="fa-solid fa-circle-plus create-icon"></i>
+                        Create
+                    </button>
+                </div>
+                <div id="dataGrid"></div>
+            </div>
+            <form id="tab2" class="tab-container" data-tab-index="1" style="display:none;">
+                <div class="form-select-container">
+                    <label for="callRadioGroupContainer">Çağrı Yönü *</label>
+                    <div id="callRadioGroupContainer"></div>
+                </div>
+                <div class="date-time-container">
+                    <label for="date">Tarih- Saat *</label>
+                    <input type="date" name="" id="date" required>
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <input type="time" name="" id="" required>
+                </div>
+                <div class="form-select-container">
+                    <label for="registeredRadioGroupContainer">Arayan/Aranan *</label>
+                    <div id="registeredRadioGroupContainer"></div>
+                </div>
+
+                <div class="row">
+                    <div class="registered-connection-form-container col">
+                        <div class="form-select-container">
+                            <label for="firm">Firma *</label>
+                            <select class="form-select" aria-label="Default select example" id="firm" required>
+                                <option value="1">Makrovit Yem</option>
+                            </select>
+                        </div>
+                        <div class="form-select-container">
+                            <label for="connection">Bağlantı *</label>
+                            <select class="form-select" aria-label="Default select example" id="connection" required>
+                                <option value="1">Giocomo Gullizzoni</option>
+                            </select>
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </div>
+                        <div class="form-select-container">
+                            <label for="tel">Telefon *</label>
+                            <select class="form-select" aria-label="Default select example" id="tel" required>
+                                <option value="1"></option>
+                            </select>
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </div>
+                    </div>
+                    <div class="registered-connection-form-container col">
+                        <div class="form-select-container">
+                            <label for="name">Ad *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-select-container">
+                            <label for="surname">Soyad *</label>
+                            <input type="text" id="surname" required>
+                        </div>
+                        <div class="form-select-container">
+                            <label for="phone">Telefon *</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-select-container">
+                    <label for="employee">Çalışan *</label>
+                    <select class="form-select" aria-label="Default select example" id="employee" required>
+                        <option value="1">Salih Solmaz</option>
+                    </select>
+                </div>
+                <div class="form-select-container">
+                    <label for="subject">Konu</label>
+                    <input type="text" id="subject" required>
+                </div>
+                <div class="form-select-container">
+                    <label for="explanation">Açıklama</label>
+                    <textarea name="" id="explanation" cols="30" rows="10" required></textarea>
+                </div>
+                <div class="form-select-container">
+                    <label for="submit"></label>
+                    <button type="submit" id="submit">Kaydet</button>
+                </div>
+            </form>
+            <!-- <div id="content"></div> -->
+
+        </div>
     </div>
+
 
     <footer class="footer"></footer>
 

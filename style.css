@@ -7,6 +7,11 @@ body {
     --bs-gutter-x: 0;
 }
 
+.navbar,
+.footer {
+    background-color: rgb(154, 152, 152) !important;
+}
+
 .navbar-container {
     width: 100%;
     align-items: center;
@@ -23,9 +28,16 @@ body {
     font-weight: 600;
 }
 
-.header-container,
-.data-container {
+.header-container{
+    display: flex;
+    align-items: center;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.allTabsContainer {
     border: 1px solid black;
+    padding: 1rem 1rem 5rem 1rem;
+    margin: 0 0 5rem 0;
 }
 
 .footer {
@@ -34,4 +46,145 @@ body {
     bottom: 0;
     width: 100%;
     height: 50px;
+}
+
+.search-form,
+.header-search-form  {
+    position: relative;
+    justify-content: center;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 120px;
+}
+
+.fa-magnifying-glass {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+}
+
+.search-icon {
+    left: 10px;
+}
+
+.arrow-right-link,
+.home-link {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.fa-solid {
+    color: black;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.tab-switcher {
+    cursor: pointer;
+}
+
+.list-group-item-title {
+    border-width: 1px 1px 0 1px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.list-group-item-title p {
+    margin-bottom: 0;
+}
+
+.list-group-item {
+    border-radius: 0 !important;
+    border: 1px solid black;
+}
+
+.date-time-container {
+    display: flex;
+    align-items: center;
+}
+
+.fa-calendar-days {
+    margin: 0 10px;
+}
+
+.form-select-container {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.form-select {
+    width: 100%;
+    max-width: 150px;
+    margin-right: 1rem;
+}
+
+.registered-connection-form-container {
+    border: 2px solid black;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.form-select-container input,
+.form-select-container textarea,
+.form-select-container select {
+    border: 2px solid black;
+}
+
+label {
+    margin-right: 1rem;
+    display: inline-block;
+    width: 100%;
+    max-width: 120px;
+    font-weight: 600;
+}
+
+.create-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.create-icon {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.fa-trash-can {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+#explanation {
+    height: 50px;
+    resize: none;
+}
+
+#submit {
+    width: 100%;
+    max-width: 100px;
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 1px 4px 5px gray;
+    padding: 5px 10px;
+}
+
+#dataGrid {
+    border: 2px solid black;
 }
