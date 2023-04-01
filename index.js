@@ -144,7 +144,7 @@ $(function () {
             "Date": "Sales Representative",
             "Employee": "Sales Representative",
             "#": "Sales Representative",
-        },          
+        },
         ],
     });
 });

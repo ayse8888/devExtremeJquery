@@ -142,7 +142,8 @@ body {
 
 .form-select-container input,
 .form-select-container textarea,
-.form-select-container select {
+.form-select-container select,
+.page-item {
     border: 2px solid black;
 }
 
