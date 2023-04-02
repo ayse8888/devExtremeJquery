@@ -103,7 +103,8 @@ form.nosubmit {
     justify-content: flex-end;
 }
 
-.tab-switcher {
+.tab-switcher,
+.fa-circle-plus {
     cursor: pointer;
 }
 
