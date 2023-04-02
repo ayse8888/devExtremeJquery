@@ -1,38 +1,4 @@
-$(function () {
-    $("#buttonContainer").dxButton({
-        text: "Click me!",
-        onClick: function () {
-            alert("Hello world!");
-        }
-    });
-});
-
-
-// $(function() {
-//     var tabPanel = $('#tabPanel').dxTabs({
-//         height: 30,
-//         dataSource: [
-//             { text: 'Tab 1', contentId: "tab1" },
-//             { text: 'Tab 2', contentId: "tab2" },
-//         ],
-//         itemTitleTemplate: function(data) {
-//             return data.text;
-//         },
-//         itemTemplate: function(data) {
-//             return data.content;
-//         }
-//     }).dxTabs('instance');
-
-//     var content = $('#allTabsContainer');
-
-//     tabPanel.on('itemClick', function(e) {
-//         var selectedItem = e.itemData;
-
-//         Update the contents of the "content" element based on the selected tab
-//         content.html(selectedItem.contentId);
-//     });
-// });
-
+// Tab Panel DevExpress
 $(function () {
     $("#tabPanel").dxTabs({
         width: 300,
@@ -66,7 +32,7 @@ $(function () {
     };
 })
 
-
+// This function switched the content when you click side menu options
 $(document).ready(function () {
     var previousActiveTabIndex = 0;
 
@@ -91,6 +57,7 @@ $(document).ready(function () {
     });
 });
 
+// radio button
 $(function () {
     $("#callRadioGroupContainer").dxRadioGroup({
         dataSource: ["Gelen", "Giden"],
@@ -99,6 +66,7 @@ $(function () {
     });
 });
 
+// radio button
 $(function () {
     $("#registeredRadioGroupContainer").dxRadioGroup({
         dataSource: ["Kayıtlı Bağlantı", "Bağlantı Değil"],
@@ -107,6 +75,7 @@ $(function () {
     });
 });
 
+// form component devexpress
 $(function () {
     $("#form").dxForm({
         formData: {
@@ -124,37 +93,54 @@ $(function () {
     });
 });
 
+// data grid component devexpress
 $(function () {
     $("#dataGrid").dxDataGrid({
         dataSource: [{
             "Name": "Nancy Davolio",
-            "Company": "Sales Representative",
-            "Date": "Sales Representative",
-            "Employee": "Sales Representative",
-            "#": "Sales Representative",
+            "Company": "Makrovit",
+            "Date": "January 12 12.15",
+            "Employee": "Selim Yılmaz",
+            "#": "",
         }, {
             "Name": "Nancy Davolio",
-            "Company": "Sales Representative",
-            "Date": "Sales Representative",
-            "Employee": "Sales Representative",
-            "#": "Sales Representative",
+            "Company": "Makrovit",
+            "Date": "January 12 12.15",
+            "Employee": "Selim Yılmaz",
+            "#": "",
         }, {
             "Name": "Nancy Davolio",
-            "Company": "Sales Representative",
-            "Date": "Sales Representative",
-            "Employee": "Sales Representative",
-            "#": "Sales Representative",
+            "Company": "Makrovit",
+            "Date": "January 12 12.15",
+            "Employee": "Selim Yılmaz",
+            "#": "",
         },
         ],
     });
 });
 
-// var update_pizza = function () {
-//     if ($("#registeredRadioGroupContainer").is(":checked")) {
-//         $('#name').prop('disabled', false);
-//     }
-//     else {
-//         $('#name').prop('disabled', 'disabled');
-//     }
-//   };
-//   $(update_pizza);
+// radio button change handler function
+const valueChangedHandler = function (e) {
+    const previousValue = e.previousValue;
+    const newValue = e.value;
+
+    // disable forms handler
+    if (newValue === "Kayıtlı Bağlantı") {
+        $(".right-form").css("background-color", "gray");
+        $(".left-form").css("background-color", "white");
+        $('.left-form-input').attr('disabled', 'disabled');
+        $('.right-form-select').removeAttr('disabled');
+    } else {
+        $(".left-form").css("background-color", "gray");
+        $(".right-form").css("background-color", "white");
+        $('.right-form-select').attr('disabled', 'disabled');
+        $('.left-form-input').removeAttr('disabled');
+    }
+};
+
+// radio button change event handler
+$(function () {
+    $("#registeredRadioGroupContainer").dxRadioGroup("instance")
+        .on("valueChanged", valueChangedHandler)
+    console.log("valueChanged", valueChangedHandler)
+})

@@ -20,6 +20,7 @@
 </head>
 
 <body class="dx-viewport">
+    <!-- Navbar -->
     <nav class="container-fluid text-center bg-body-tertiary navbar">
         <div class="row navbar-container">
             <div class="col-sm-12">
@@ -29,7 +30,7 @@
                 <a href=""><i class="fa-solid fa-arrow-left"></i></a>
                 <a href="" class="arrow-right-link"><i class="fa-solid fa-arrow-right"></i></a>
                 <a href=""><i class="fa-solid fa-xmark"></i></a>
-                <a class="home-link" href="index.html">
+                <a class="home-link" href="deneme.html">
                     <i class="fa-solid fa-house"></i>
                 </a>
             </div>
@@ -38,32 +39,32 @@
             </div>
             <div class="col-sm-2">
                 <form class="d-flex search-form" role="search">
-                    <input class="form-control me-2 search-input" type="
-                    " placeholder="" aria-label="Search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input class="nosubmit" type="search" placeholder="Search...">
                 </form>
             </div>
         </div>
     </nav>
 
+    <!-- Header -->
     <div class="row header-container">
         <div class="col-sm-6 logo-container">
-            <a class="navbar-brand" href="index.html">Firmanet</a>
+            <a class="navbar-brand" href="/">Firmanet</a>
         </div>
         <div class="col-sm-6 search-container">
             <form class="d-flex header-search-form" role="search">
-                <input class="form-control me-2 header-search-input" type="" placeholder="" aria-label="Search">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input class="nosubmit header-search-input" type="search" placeholder="Search...">
             </form>
             <i class="fa-solid fa-user"></i>
         </div>
     </div>
 
+    <!-- Tab Panel -->
     <div class="d-flex">
         <div class="col-sm-2"></div>
         <div id="tabPanel" class="col-sm-10"></div>
     </div>
 
+    <!-- Side Menu Options -->
     <div class="row">
         <div class="col-sm-2">
             <div class="list-group-item-title">
@@ -88,7 +89,11 @@
                         Create
                     </button>
                 </div>
+
+                <!-- Data Grid Table -->
                 <div id="dataGrid"></div>
+
+                <!-- Pagination -->
                 <ul class="pagination d-flex justify-content-end my-1 mx-5">
                     <li class="page-item">
                         <a class="page-link" href="#" aria-label="Previous">
@@ -106,6 +111,8 @@
                 </ul>
 
             </div>
+
+            <!-- Form -->
             <form id="tab2" class="tab-container" data-tab-index="1" style="display:none;">
                 <div class="form-select-container">
                     <label for="callRadioGroupContainer">Çağrı Yönü *</label>
@@ -123,43 +130,52 @@
                 </div>
 
                 <div class="row">
-                    <div class="registered-connection-form-container col">
+                    <!-- Left-Form -->
+                    <fieldset class="registered-connection-form-container col left-form">
+                        <legend class="float-none w-auto px-3">Kayıtlı Bağlantı</legend>
                         <div class="form-select-container">
                             <label for="firm">Firma *</label>
-                            <select class="form-select" aria-label="Default select example" id="firm" required>
+                            <select class="form-select right-form-select" aria-label="Default select example" id="firm"
+                                required>
                                 <option value="1">Makrovit Yem</option>
                             </select>
                         </div>
                         <div class="form-select-container">
                             <label for="connection">Bağlantı *</label>
-                            <select class="form-select" aria-label="Default select example" id="connection" required>
+                            <select class="form-select right-form-select" aria-label="Default select example"
+                                id="connection" required>
                                 <option value="1">Giocomo Gullizzoni</option>
                             </select>
                             <i class="fa-solid fa-circle-plus"></i>
                         </div>
                         <div class="form-select-container">
                             <label for="tel">Telefon *</label>
-                            <select class="form-select" aria-label="Default select example" id="tel" required>
+                            <select class="form-select right-form-select" aria-label="Default select example" id="tel"
+                                required>
                                 <option value="1"></option>
                             </select>
                             <i class="fa-solid fa-circle-plus"></i>
                         </div>
-                    </div>
-                    <div class="registered-connection-form-container col">
+                    </fieldset>
+
+                    <!-- Right-Form -->
+                    <fieldset class="registered-connection-form-container col right-form">
+                        <legend class="float-none w-auto px-3">Bağlantı Değil</legend>
                         <div class="form-select-container">
                             <label for="name">Ad *</label>
-                            <input type="text" id="name" required>
+                            <input type="text" id="name" required class="left-form-input">
                         </div>
                         <div class="form-select-container">
                             <label for="surname">Soyad *</label>
-                            <input type="text" id="surname" required>
+                            <input type="text" id="surname" required class="left-form-input">
                         </div>
                         <div class="form-select-container">
                             <label for="phone">Telefon *</label>
-                            <input type="tel" id="phone" required>
+                            <input type="tel" id="phone" required class="left-form-input">
                         </div>
-                    </div>
+                    </fieldset>
                 </div>
+
                 <div class="form-select-container">
                     <label for="employee">Çalışan *</label>
                     <select class="form-select" aria-label="Default select example" id="employee" required>
@@ -167,7 +183,7 @@
                     </select>
                 </div>
                 <div class="form-select-container">
-                    <label for="subject">Konu</label>
+                    <label for="subject">Konu *</label>
                     <input type="text" id="subject" required>
                 </div>
                 <div class="form-select-container">
@@ -179,12 +195,10 @@
                     <button type="submit" id="submit">Kaydet</button>
                 </div>
             </form>
-            <!-- <div id="content"></div> -->
-
         </div>
     </div>
 
-
+    <!-- Footer -->
     <footer class="footer"></footer>
 
 
