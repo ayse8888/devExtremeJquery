@@ -4,8 +4,7 @@ $(function () {
         width: 300,
         items: [
             {
-                badge: 'Sayfam',
-                disabled: true,
+                text: 'Sayfam',
             },
             {
                 text: 'Çağrı Listele',
@@ -20,16 +19,6 @@ $(function () {
         }
     });
 
-    function showMessage(id) {
-        DevExpress.ui.notify(
-            {
-                message: `Tab ${id} has been clicked!`,
-                width: 250
-            },
-            'info',
-            500
-        );
-    };
 })
 
 // This function switched the content when you click side menu options
